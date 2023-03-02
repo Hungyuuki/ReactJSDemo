@@ -19,5 +19,5 @@ function error(err, type = TYPE_Error) {
 }
 
 
-export default logger;//ném ra logger
+export default logger;//ném ra default logger, 1 module chỉ export được 1 default
 // logger('Lệnh ở chỗ export thực hiện trước')
