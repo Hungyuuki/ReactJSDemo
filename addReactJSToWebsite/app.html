@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add ReactJS to Website</h1>
+    <!-- 1. Github: nơi lưu mã nguồn.
+         NPMJS: nơi lưu các sản phẩm được xây dựng lên từ mã nguồn.
+         UNPKG: Lấy được thư viện được lưu trữ bên npmjs dưới dạng cdn (url)
+    2. Add ReactJS to website.
+    3. Official docs
+    4. React.createElement() ->React element
+    5. So sánh với document.createElement() -> DOM element.
+    6. Thay đổi: id, classname, Style...
+    7. Thêm: text, html... -->
+
+
+    <script>
+        //DOM
+        const h1DOM = document.createElement('h1');
+        h1DOM.title = 'Heeloo';
+        h1DOM.className = ' heading';
+        h1DOM.innerText = 'Hello guys';
+        document.body.appendChild(h1DOM)
+    </script>
+
+    <script>
+        //Reactjs
+        const h1React = React.createElement('h1', {
+            title: 'h1React',
+            className: 'heading',
+        }, 'Hello guys!')//đưa children thành một đối số thứ 3, tuy nhiên children này cũng thuộc trong props
+        console.log(h1DOM)
+        console.log(h1React)
+    </script>
+    <div id="root"></div>
+    <!-- <script>
+        console.log(React.version);
+    </script> -->
+    <script type = "module" src="./app.js"></script>
+</body>
+</html>
