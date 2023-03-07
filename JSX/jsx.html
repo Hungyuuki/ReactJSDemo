@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js" ></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!--    
+    1. Tại sao phải sử dụng React-DOM/React-Native? là cầu nối giữa react(thư viện dòng số 7) và DOM/Native, tạo react element và rend ra dom
+    2. Tại sao lại tác React-DOM ra?
+    3. Render UI 
+    -->
+    <div id="root"></div>
+    <script type="text/babel">
+        const courses = [
+            {
+                name: 'HTML, CSS'
+            },            {
+                name: 'Spring Boot'
+            },
+        ]
+        const ul = <ul>
+            {
+                courses.map((course, index) => <li key={index}>{course.name}</li>)
+                //map trả về mảng, nó ko khác gì việc trả về ReactDOM
+            }
+        </ul>
+        // console.log(ul)
+
+            //get root element by React@17
+            // const root = document.getElementById('root')
+            //reactDom ->render UI by React@17
+            ReactDOM.render(ul, document.getElementById('root'));
+    </script>
+
+<!-- 
+JSX -> JS XML : XML cũng là html, nhưng được sinh ra để hỗ trợ viết html trong file js
+1. Luôn dùng React.createElement()? Vấn đề?
+2. JSX? Live Demo: có thể viết code js vào trong {} của thẻ html
+3. JSX ko phải là html, cần có js, babel(thư viện chuyển đổi cú pháp) để dùng JSX.
+4. JSX và ReactDOM  -->
+</body>
+</html>
