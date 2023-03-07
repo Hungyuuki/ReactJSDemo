@@ -14,30 +14,61 @@
          UNPKG: Lấy được thư viện được lưu trữ bên npmjs dưới dạng cdn (url)
     2. Add ReactJS to website.
     3. Official docs
-    4. React.createElement() ->React element
+    4. React.createElement() ->React element: thư viện nhỏ nhất 
     5. So sánh với document.createElement() -> DOM element.
     6. Thay đổi: id, classname, Style...
     7. Thêm: text, html... -->
 
 
-    <script>
+    <!-- <script>//thẻ script là để rend ra thẻ h1
         //DOM
-        const h1DOM = document.createElement('h1');
+        const h1DOM = document.createElement('h1');//tạo một đối tượng h1DOM
         h1DOM.title = 'Heeloo';
         h1DOM.className = ' heading';
         h1DOM.innerText = 'Hello guys';
-        document.body.appendChild(h1DOM)
+        document.body.appendChild(h1DOM)//append đối tượng h1DOM vào thẻ body, thẻ body thuộc đối tượng document.
     </script>
 
     <script>
-        //Reactjs
+        //Reactjs, bản thân reactjs ko tạo ra được phần render, mà chỉ tạo ra được react Element cần một thư viện là ReactDom
         const h1React = React.createElement('h1', {
             title: 'h1React',
             className: 'heading',
-        }, 'Hello guys!')//đưa children thành một đối số thứ 3, tuy nhiên children này cũng thuộc trong props
+            innerText: 'This is inner text',
+        }, 'This is children')//đưa children thành một đối số thứ 3, tuy nhiên children này cũng thuộc trong props
+        //Cú pháp đầy đủ của createElement là React.createElement(type, props, children1, children2...) 
         console.log(h1DOM)
-        console.log(h1React)
-    </script>
+        console.log(h1React)//khi log ra thì thấy children cũng nằm trong props
+    </script> -->
+
+
+<script>
+    //DOM
+    const ulDOM = document.createElement('ul');
+    const liDOM1 = document.createElement('li');
+    liDOM1.innerText = 'Chánh kiến 1'
+    const liDOM2 = document.createElement('li');
+    liDOM2.innerText = 'Chánh kiến 2'
+    ulDOM.appendChild(liDOM1)
+    ulDOM.appendChild(liDOM2)
+    document.body.appendChild(ulDOM);
+</script>
+
+<script>
+    //Reactjs
+    const ulReact = React.createElement(
+        'ul', 
+        {style: 'color: aqua; font-size:30'},
+        React.createElement('li', {id:'id1', className: 'name1'}, 'Nhân tướng ứng dụng'),
+        React.createElement('li', null, 'Nhân sự kế thừa')
+        //Khi thể hiện 2 đối tượng trở lên thì sẽ thể hiện dưới dạng array
+        )
+        console.log(ulReact)
+</script>
+<div class="post-item">
+    <h2 title="Học reactjs tại f8">ReactJS</h2>
+    <h2>Học Reactjs từ cơ bản tới nâng cao</h2>
+</div>
     <div id="root"></div>
     <!-- <script>
         console.log(React.version);
