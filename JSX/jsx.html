@@ -7,6 +7,7 @@
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js" ></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- Chuyển cú pháp từ jsx thành js -->
     <title>Document</title>
 </head>
 <body>
@@ -24,18 +25,22 @@
                 name: 'Spring Boot'
             },
         ]
+        // tạo thẻ ul trước rồi đưa thẻ li vào
         const ul = <ul>
             {
                 courses.map((course, index) => <li key={index}>{course.name}</li>)
-                //map trả về mảng, nó ko khác gì việc trả về ReactDOM
+                //đây là cú pháp sử dụng JSX để gọn hơn cho việc tạo ra React Element, rồi đưa thẻ li vào
+                //map trả về mảng, nó ko khác gì việc trả về ReactDOM.
+                //Cặp {} để viết code js vào trong.
+                //Đẩy đoạn này lên thẻ head một thẻ script và các content dạng React element 
             }
         </ul>
-        // console.log(ul)
+        console.log(ul)
 
             //get root element by React@17
-            // const root = document.getElementById('root')
+            const root = document.getElementById('root')
             //reactDom ->render UI by React@17
-            ReactDOM.render(ul, document.getElementById('root'));
+            ReactDOM.render(ul, document.getElementById('root'));//Để ReactDOM rend ra được thì bắt buộc ul phải là một đối tượng ReactElement
     </script>
 
 <!-- 
