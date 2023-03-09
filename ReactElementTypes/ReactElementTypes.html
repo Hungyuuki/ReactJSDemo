@@ -25,21 +25,28 @@
     <script type="text/babel">
         function Header () {
             return <div className="header">Header</div>
+            //return ra một định dạng jsx, bình thường ko thể trả về jsx nếu ko có thư viện babel
         }
-        function Content () {
-            return <div className="content">Content</div>
-        }
+        // function Content () {
+        //     return <div className="content">Content</div>
+        // }
         function Footer () {
             return <div className="footer">Footer</div>
+        }
+        class Content extends React.Component {
+            render() {
+                return (<div className="content">Content</div>)
+            }
         }
             const app = (
                 // đặt header là hàm ở dòng 26 và tương tự cho các component khác
                 <div className="wrapper">
-                    <Header></Header>
-                    <Content></Content>
-                    <Footer></Footer>
+                    <Header/>
+                    <Content/>
+                    <Footer/>
                 </div>
             )
+            console.log(app)
         ReactDOM.render(app, document.getElementById('app'))
     </script>
 
